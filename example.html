@@ -1,0 +1,55 @@
+<!doctype html>
+ <html>
+  <head>
+	  <script src="./index.js"></script>
+	  <style>
+body {
+	margin: 0 0;
+}
+.container {
+	width: 100vw;
+	display: grid;
+		grid-template-columns: 1fr 1fr;
+   	grid-template-areas: 
+		"hello hello"
+		"awesome world";
+}
+.container > div {
+	min-width: 0;
+	padding: 20px;
+		display: flex;
+			flex-direction: column;
+				justify-content: center;
+}
+.hello {
+	grid-area: hello;
+	background: red;
+		font-family: monospace;
+}
+.awesome {
+	grid-area: awesome;
+	background: cyan;
+        color: white;
+}
+.world {
+	grid-area: world;
+	background: magenta;
+		color: white;
+			font-family: Arial;
+}
+ </style>
+  </head>
+  <body>
+	  <div class="container">
+	  <div class="hello">
+    <lipp-fitty>Hello!</lipp-fitty>
+	  </div>
+	  <div class="awesome">
+    <lipp-fitty>awesome</lipp-fitty>
+	  </div>
+	  <div class="world">
+    <lipp-fitty>world</lipp-fitty>
+	  </div>
+	  </div>
+  </body>
+</html>
