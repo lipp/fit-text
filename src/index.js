@@ -4,7 +4,6 @@ const template = document.createElement('template')
 template.innerHTML = `
   <div><slot></slot></div>
   <style>
-    :host {overflow: scroll;}
     div {display: inline-block;}
   </style>
 `
