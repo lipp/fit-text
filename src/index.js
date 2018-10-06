@@ -12,25 +12,26 @@ template.innerHTML = `
 customElements.define(
   'lipp-fitty',
   class extends HTMLElement {
-    constructor () {
+    constructor() {
       super()
-      this.attachShadow({mode: 'open'})
+      this.attachShadow({ mode: 'open' })
       this.shadowRoot.appendChild(template.content.cloneNode(true))
       window.addEventListener('resize', () => {
         this.resize()
       })
     }
 
-    resize () {
+    resize() {
       cancelAnimationFrame(this.af)
       this.af = requestAnimationFrame(() => {
-      const div = this.shadowRoot.querySelector('div')
-      const currentFontSize = parseInt(getComputedStyle(div).fontSize, 10)
-      div.style.fontSize = `${this.clientWidth / div.scrollWidth * currentFontSize}px`
+        const div = this.shadowRoot.querySelector('div')
+        const currentFontSize = parseInt(getComputedStyle(div).fontSize, 10)
+        div.style.fontSize = `${(this.clientWidth / div.scrollWidth) *
+          currentFontSize}px`
       })
     }
 
-    connectedCallback () {
+    connectedCallback() {
       this.resize()
     }
   }
