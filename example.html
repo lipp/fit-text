@@ -1,55 +1,66 @@
 <!doctype html>
- <html>
-  <head>
-	  <script src="./index.js"></script>
-	  <style>
-body {
-	margin: 0 0;
-}
-.container {
-	width: 100vw;
-	display: grid;
-		grid-template-columns: 1fr 1fr;
-   	grid-template-areas: 
-		"hello hello"
-		"awesome world";
-}
-.container > div {
-	min-width: 0;
-	padding: 20px;
-		display: flex;
-			flex-direction: column;
-				justify-content: center;
-}
-.hello {
-	grid-area: hello;
-	background: red;
-		font-family: monospace;
-}
-.awesome {
-	grid-area: awesome;
-	background: cyan;
-        color: white;
-}
-.world {
-	grid-area: world;
-	background: magenta;
-		color: white;
-			font-family: Arial;
-}
- </style>
-  </head>
-  <body>
-	  <div class="container">
-	  <div class="hello">
-    <lipp-fitty>Hello!</lipp-fitty>
-	  </div>
-	  <div class="awesome">
-    <lipp-fitty>awesome</lipp-fitty>
-	  </div>
-	  <div class="world">
-    <lipp-fitty>world</lipp-fitty>
-	  </div>
-	  </div>
-  </body>
+<html>
+
+<head>
+    <script src="./index.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .container {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "hello hello" "awesome world";
+            background: black;
+            border: 6px solid black;
+	    min-height: 100vh;
+	    box-sizing: border-box;
+        }
+        
+        .container > div {
+            min-width: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 6px;
+        }
+        
+        .hello {
+            grid-area: hello;
+            background: #e8026c;
+            font-family: monospace;
+        }
+        
+        .awesome {
+            grid-area: awesome;
+            background: #00cece;
+            color: white;
+        }
+        
+        .world {
+            grid-area: world;
+            background: #6e00ff;
+            color: white;
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hello">
+            <lipp-fitty>Hello!</lipp-fitty>
+        </div>
+        <div class="awesome">
+            <lipp-fitty><em>awesome</em></lipp-fitty>
+        </div>
+        <div class="world">
+            <lipp-fitty><strong>world</strong></lipp-fitty>
+        </div>
+    </div>
+</body>
+
 </html>

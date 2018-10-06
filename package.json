@@ -21,19 +21,11 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "autoprefixer": "^7.2.3",
-    "fitty": "^2.2.6",
-    "node-sass": "^4.7.2",
-    "postcss": "^6.0.14",
     "rollup": "^0.66.4",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-string": "^2.0.2"
+    "rollup-plugin-babel": "^4.0.3"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "lodash": "^4.17.11"
+    "@babel/polyfill": "^7.0.0"
   }
 }
