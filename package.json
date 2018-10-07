@@ -1,6 +1,6 @@
 {
-  "name": "fit-text",
-  "version": "1.0.0",
+  "name": "fit-text-webcomponent",
+  "version": "1.0.1",
   "description": "A minimal fit-text web-component / custom-element",
   "keywords": [
     "fit",
@@ -12,6 +12,7 @@
   ],
   "main": "index.min.js",
   "scripts": {
+    "build": "uglifyjs --compress --mangle --output index.min.js -- index.js ",
     "prettier": "prettier --no-semi --single-quote --write index.js",
     "dev": "http-server ."
   },
@@ -19,7 +20,8 @@
   "license": "MIT",
   "devDependencies": {
     "http-server": "^0.11.1",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "uglify-es": "^3.3.9"
   },
   "dependencies": {}
 }
