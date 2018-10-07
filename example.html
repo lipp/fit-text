@@ -12,7 +12,7 @@
             width: 100vw;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "hello hello" "awesome world";
+            grid-template-areas: "hello hello" "punch punch" "awesome world";
             background: black;
             border: 6px solid black;
 	    min-height: 100vh;
@@ -31,8 +31,14 @@
         .hello {
             grid-area: hello;
             background: #e8026c;
-            font-family: monospace;
+            font-family: Helvetica;
         }
+
+	.punch {
+          grid-area: punch;
+	  background: white;
+	  font-family: Monaco;
+	}
         
         .awesome {
             grid-area: awesome;
@@ -52,13 +58,16 @@
 <body>
     <div class="container">
         <div class="hello">
-            <lipp-fitty>Hello!</lipp-fitty>
+	    <fit-text><strong>Hello</strong>!</fit-text>
         </div>
+	<div class='punch'>
+	    <fit-text>&lt;fit-text&gt;</fit-text>
+	</div>
         <div class="awesome">
-            <lipp-fitty><em>awesome</em></lipp-fitty>
+            <fit-text><em>awesome</em></fit-text>
         </div>
         <div class="world">
-            <lipp-fitty><strong>world</strong></lipp-fitty>
+            <fit-text><strong>world</strong></fit-text>
         </div>
     </div>
 </body>

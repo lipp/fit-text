@@ -1,31 +1,25 @@
 {
-  "name": "lipp-shell",
-  "version": "1.0.1",
-  "description": "A minimal web app shell web-component / custom-element",
+  "name": "fit-text",
+  "version": "1.0.0",
+  "description": "A minimal fit-text web-component / custom-element",
   "keywords": [
-    "shell",
+    "fit",
     "web component",
     "custom element",
-    "app",
-    "drawer"
+    "text",
+    "responsive",
+    "width"
   ],
   "main": "index.min.js",
   "scripts": {
-    "test": "exit 0",
-    "dev": "cd src && rollup -c -w -o ../index.js",
-    "build": "cd src && BABEL_ENV=production rollup -c -o ../index.min.js",
-    "prepare": "npm run build"
+    "prettier": "prettier --no-semi --single-quote --write index.js",
+    "dev": "http-server ."
   },
   "author": "Gerhard Preuss",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "rollup": "^0.66.4",
-    "rollup-plugin-babel": "^4.0.3"
+    "http-server": "^0.11.1",
+    "prettier": "^1.14.3"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.0.0"
-  }
+  "dependencies": {}
 }
