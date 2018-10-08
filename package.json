@@ -12,10 +12,11 @@
   ],
   "main": "index.min.js",
   "scripts": {
-    "build": "uglifyjs --compress --mangle --output index.min.js -- index.js ",
+    "build": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js ",
     "prettier": "prettier --no-semi --single-quote --write index.js && js-beautify -r examples/*.html",
     "dev": "http-server ."
   },
+  "repository": "github:lipp/fit-text",
   "author": "Gerhard Preuss",
   "license": "MIT",
   "devDependencies": {
