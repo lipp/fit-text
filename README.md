@@ -1,6 +1,17 @@
 # fit-text
 
-A very basic and lightweight fit-text web component (minified + gzip < 500 byte).
+A very basic and lightweight fit-text web component.
+
+## Highlights
+
+ - pure web component / custom element
+ - less than 500 byte (minified + gzip)
+ - no dependencies
+ - no additional css / js required
+
+# Demo
+
+[![Demo on Codepen](./demo.gif)](https://codepen.io/lipp/pen/YJGvEe?editors=1100#0)
 
 # Usage
 
@@ -12,6 +23,3 @@ A very basic and lightweight fit-text web component (minified + gzip < 500 byte)
 </div>
 ```
 
-# Demo
-
-Check out the demo on [codepen.io](https://codepen.io/lipp/pen/YJGvEe?editors=1100#0).
