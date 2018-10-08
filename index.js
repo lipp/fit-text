@@ -1,9 +1,9 @@
 /* globals customElements HTMLElement getComputedStyle */
 
 const template = `
-  <div><slot></slot></div>
+  <div id="outer"><div id="inner"><slot></slot></div></div>
   <style>
-    div {display: inline-block; white-space: nowrap;}
+    #inner {display: inline-block; white-space: nowrap;}
   </style>
 `
 
@@ -14,7 +14,8 @@ customElements.define(
       super()
       const shadowRoot = this.attachShadow({ mode: 'open' })
       shadowRoot.innerHTML = template
-      this.div = shadowRoot.querySelector('div')
+      this.inner = shadowRoot.querySelector('#inner')
+      this.outer = shadowRoot.querySelector('#outer')
       this.resize = this.resize.bind(this)
       window.addEventListener('resize', this.resize)
     }
@@ -27,10 +28,11 @@ customElements.define(
       cancelAnimationFrame(this.af)
       this.af = requestAnimationFrame(() => {
         const currentFontSize = parseInt(
-          getComputedStyle(this.div).fontSize,
+          getComputedStyle(this.inner).fontSize,
           10
         )
-        this.div.style.fontSize = `${(this.clientWidth / this.div.scrollWidth) *
+        this.inner.style.fontSize = `${(this.outer.clientWidth /
+          this.inner.scrollWidth) *
           currentFontSize}px`
       })
     }

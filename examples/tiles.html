@@ -2,24 +2,24 @@
 <html>
 
 <head>
-    <script src="./index.min.js"></script>
+    <script src="../index.js"></script>
     <style>
         body {
             margin: 0;
         }
-        
+
         .container {
             width: 100vw;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "hello hello" "punch punch" "awesome world";
+            grid-template-areas: "punch punch""hello hello""awesome world""wonderful wonderful";
             background: black;
             border: 6px solid black;
-	    min-height: 100vh;
-	    box-sizing: border-box;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
-        
-        .container > div {
+
+        .container>* {
             min-width: 0;
             padding: 20px;
             display: flex;
@@ -27,48 +27,48 @@
             justify-content: center;
             margin: 6px;
         }
-        
+
         .hello {
             grid-area: hello;
-            background: #e8026c;
+            background: white;
             font-family: Helvetica;
+            text-transform: uppercase;
         }
 
-	.punch {
-          grid-area: punch;
-	  background: white;
-	  font-family: Monaco;
-	}
-        
+        .punch {
+            grid-area: punch;
+            background: #e8026c;
+            font-family: Monaco;
+        }
+
         .awesome {
             grid-area: awesome;
             background: #00cece;
             color: white;
         }
-        
+
         .world {
             grid-area: world;
             background: #6e00ff;
             color: white;
             font-family: Arial;
         }
+
+        .wonderful {
+            grid-area: wonderful;
+            background: #d0d04d;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="hello">
-	    <fit-text><strong>Hello</strong>!</fit-text>
-        </div>
-	<div class='punch'>
-	    <fit-text>&lt;fit-text&gt;</fit-text>
-	</div>
-        <div class="awesome">
-            <fit-text><em>awesome</em></fit-text>
-        </div>
-        <div class="world">
-            <fit-text><strong>world</strong></fit-text>
-        </div>
+        <fit-text class="hello"><strong>Hello!!!</strong></fit-text>
+        <fit-text class='punch'>&lt;fit-text&gt;</fit-text>
+        <fit-text class="awesome"><em>awesome</em></fit-text>
+        <fit-text class="world"><strong>world</strong></fit-text>
+        <fit-text class="wonderful">wonderful</fit-text>
     </div>
 </body>
 
