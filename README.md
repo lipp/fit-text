@@ -27,5 +27,5 @@ Play with this demo on [codepen.io](https://codepen.io/lipp/pen/YJGvEe?editors=1
 </div>
 ```
 
-Also checkout the [examples directory]('./examples').
+Also checkout the [examples directory]('/examples').
 
