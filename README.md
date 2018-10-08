@@ -1,6 +1,8 @@
 # fit-text
 
-A very basic and lightweight fit-text web component.
+A very basic and lightweight fit-text web component. 
+
+Adjusts the font-size to fit the parent container width.
 
 ## Highlights
 
@@ -13,6 +15,8 @@ A very basic and lightweight fit-text web component.
 
 [![Demo on Codepen](./demo.gif)](https://codepen.io/lipp/pen/YJGvEe?editors=1100#0)
 
+Play with this demo on [codepen.io](https://codepen.io/lipp/pen/YJGvEe?editors=1100#0).
+
 # Usage
 
 ```html
@@ -22,4 +26,6 @@ A very basic and lightweight fit-text web component.
   <fix-text>This fits to 50vw</fit-text>
 </div>
 ```
+
+Also checkout the [examples directory]('./examples').
 
