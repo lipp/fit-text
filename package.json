@@ -12,7 +12,8 @@
   ],
   "main": "dist/index.min.js",
   "scripts": {
-    "build": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js ",
+    "postinstall": "node -e \"console.log('post', process.env)\"",
+    "build": "node -e \"console.log(process.env)\" && uglifyjs --compress --mangle --output dist/index.min.js -- index.js ",
     "prettier": "prettier --no-semi --single-quote --write index.js && js-beautify -r examples/*.html",
     "start": "http-server . -s -g"
   },
