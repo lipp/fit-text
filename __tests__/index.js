@@ -21,7 +21,7 @@ it('should calculate and set style.fontSize of #inner', async () => {
     try {
     browser = await puppeteer.launch({
       headless: true,
-      args: [`--window-size=${width},${height}`]
+      args: [`--window-size=${width},${height}`, '--no-sandbox']
     })
     const page = await browser.newPage()
     page.setViewport({ width, height })
