@@ -18,10 +18,16 @@ customElements.define(
       this.outer = shadowRoot.querySelector('#outer')
       this.resize = this.resize.bind(this)
       addEventListener('resize', this.resize)
+      if (document.fonts) {
+        document.fonts.addEventListener('loadingdone', this.resize)
+      }
     }
 
     disconnectedCallback() {
       removeEventListener('resize', this.resize)
+      if (document.fonts) {
+        document.fonts.removeEventListener('loadingdone', this.resize)
+      }
     }
 
     resize() {
