@@ -1,6 +1,6 @@
 {
   "type": "static",
   "features": {
-    "cloud": "v2"
+    "cloud": "v1"
   }
 }
