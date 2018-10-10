@@ -23,6 +23,9 @@ RUN npm install
 COPY . .
 RUN npm test && npm run build && npm prune
 
-FROM alpine
+FROM busybox
 WORKDIR /usr/src
+RUN mkdir /public
 COPY ./ /public/
+RUN echo "<h1>The time is $(date)</h1>" > /public/index.html
+
