@@ -33,6 +33,7 @@ it('should calculate and set style.fontSize of #inner', async () => {
     )
     expect(parseInt(fontSize)).toEqual(29)
   } finally {
+    console.log(browser)
     browser.close()
   }
 })
