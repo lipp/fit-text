@@ -14,7 +14,7 @@
   "scripts": {
     "build": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js ",
     "prettier": "prettier --no-semi --single-quote --write index.js && js-beautify -r examples/*.html",
-    "dev": "http-server ."
+    "start": "http-server . -s -g"
   },
   "repository": "github:lipp/fit-text",
   "author": "Gerhard Preuss",
