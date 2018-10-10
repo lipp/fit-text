@@ -21,14 +21,8 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . .
-RUN npm test && npm build && npm install --production
+RUN npm test && npm run build && npm prune
 
-FROM mhart/alpine-node:base-10
+FROM alpine
 WORKDIR /usr/src
-ENV NODE_ENV="production"
-ENV PATH="./node_modules/.bin:$PATH"
-
-# Copy files from the base image over to our new image's working directory
-COPY --from=build /usr/src .
-
-CMD ["npm", "start"]
+COPY ./ /public/

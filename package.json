@@ -13,8 +13,7 @@
   "main": "dist/index.min.js",
   "scripts": {
     "test": "jest",
-    "minify": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js",
-    "build": "npm test",
+    "build": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js",
     "prettier": "prettier --no-semi --single-quote --write index.js __tests__/index.js && js-beautify -r examples/*.html",
     "start": "http-server . -s -g"
   },
