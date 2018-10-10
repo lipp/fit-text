@@ -1,5 +1,5 @@
 {
-  "type": "docker",
+  "type": "static",
   "features": {
     "cloud": "v2"
   }
