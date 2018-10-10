@@ -1,4 +1,4 @@
-/* globals customElements HTMLElement getComputedStyle */
+/* globals customElements HTMLElement getComputedStyle addEventListener removeEventListener */
 
 const template = `
   <div id="outer"><div id="inner"><slot></slot></div></div>
@@ -17,11 +17,11 @@ customElements.define(
       this.inner = shadowRoot.querySelector('#inner')
       this.outer = shadowRoot.querySelector('#outer')
       this.resize = this.resize.bind(this)
-      window.addEventListener('resize', this.resize)
+      addEventListener('resize', this.resize)
     }
 
     disconnectedCallback() {
-      window.removeEventListener('resize', this.resize)
+      removeEventListener('resize', this.resize)
     }
 
     resize() {
