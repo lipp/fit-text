@@ -18,6 +18,7 @@ afterAll(() => {
 it('should calculate and set style.fontSize of #inner', async () => {
   let browser
   try {
+    try {
     browser = await puppeteer.launch({
       headless: true,
       args: [`--window-size=${width},${height}`]
@@ -32,8 +33,10 @@ it('should calculate and set style.fontSize of #inner', async () => {
       e => e.shadowRoot.querySelector('#inner').style.fontSize
     )
     expect(parseInt(fontSize)).toEqual(29)
+    } catch (err) {
+      console.log(err)
+    }
   } finally {
-    console.log(browser)
     browser.close()
   }
 })
