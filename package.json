@@ -12,18 +12,27 @@
   ],
   "main": "dist/index.min.js",
   "scripts": {
-    "build": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js ",
-    "prettier": "prettier --no-semi --single-quote --write index.js && js-beautify -r examples/*.html",
+    "test": "jest && npm run build && bundlesize",
+    "build": "uglifyjs --compress --mangle --output dist/index.min.js -- index.js",
+    "prettier": "prettier --no-semi --single-quote --write index.js __tests__/index.js && js-beautify -r examples/*.html",
     "start": "http-server . -s -g"
   },
   "repository": "github:lipp/fit-text",
   "author": "Gerhard Preuss",
   "license": "MIT",
   "devDependencies": {
+    "bundlesize": "^0.17.0",
     "http-server": "^0.11.1",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
     "js-beautify": "^1.8.6",
     "prettier": "^1.14.3",
+    "puppeteer": "^1.9.0",
     "uglify-es": "^3.3.9"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "bundlesize": [{
+    "path": "./dist/index.min.js",
+    "maxSize": "600 byte"
+  }]
 }
