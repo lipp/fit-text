@@ -21,7 +21,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . .
-RUN npm test && npm run build && npm prune
+RUN npm test && npm prune
 
 FROM busybox
 WORKDIR /usr/src

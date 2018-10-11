@@ -31,7 +31,7 @@ it('should calculate and set style.fontSize of #inner', async () => {
       'fit-text',
       e => e.shadowRoot.querySelector('#inner').style.fontSize
     )
-    expect(parseInt(fontSize)).toEqual(28)
+    expect(parseInt(fontSize)).toEqual(29)
   } finally {
     browser.close()
   }
