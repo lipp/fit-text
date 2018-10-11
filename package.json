@@ -12,7 +12,7 @@
   ],
   "main": "dist/index.min.js",
   "scripts": {
-    "test": "jest && npm run build && bundlesize",
+    "test": "npm run build && jest && bundlesize",
     "build": "uglifyjs --compress --mangle --output ./dist/index.min.js -- ./src/index.js",
     "prettier": "prettier --no-semi --single-quote --write index.js __tests__/index.js && js-beautify -r examples/*.html",
     "dev": "nodemon --exec \"npm run build\" --watch ./src & live-server --port=8082 --ignore=./src"
