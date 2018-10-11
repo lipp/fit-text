@@ -1,4 +1,4 @@
-FROM node:10-slim as build
+FROM node:10 as build
 
 # See https://crbug.com/795759
 RUN apt-get update && apt-get install -yq libgconf-2-4
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
     && rm -rf /src/*.deb
 
 WORKDIR /usr/src
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 
 COPY . .
