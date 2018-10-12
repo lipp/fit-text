@@ -4,35 +4,53 @@ const puppeteer = require('puppeteer')
 const server = new HttpServer()
 const port = 8030
 
+const minimalExample = `http://localhost:${port}/examples/minimal.html`
+
 const width = 500
 const height = 1000
 
-beforeAll(done => {
-  server.listen(port, '0.0.0.0', done)
+let browser
+
+beforeAll(async () => {
+  const results = await Promise.all([
+    new Promise(resolve => server.listen(port, '0.0.0.0', resolve)),
+    puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox']
+    })
+  ])
+  browser = results[1]
 })
 
 afterAll(() => {
   server.close()
+  browser.close()
 })
 
-it('should calculate and set style.fontSize of #inner', async () => {
-  let browser
-  try {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: [`--window-size=${width},${height}`, '--no-sandbox']
-    })
-    const page = await browser.newPage()
-    page.setViewport({ width, height })
+const getFontSize = page =>
+  page.$eval('fit-text', e =>
+    parseInt(e.shadowRoot.querySelector('#inner').style.fontSize)
+  )
 
-    await page.goto(`http://localhost:${port}/examples/minimal.html`)
-    await page.waitForSelector('fit-text')
-    const fontSize = await page.$eval(
-      'fit-text',
-      e => e.shadowRoot.querySelector('#inner').style.fontSize
-    )
-    expect(parseInt(fontSize)).toEqual(29)
-  } finally {
-    browser.close()
-  }
+it('should calculate and set style.fontSize of #inner', async () => {
+  const page = await browser.newPage()
+  page.setViewport({ width, height })
+  await page.goto(minimalExample)
+  await page.waitFor(200)
+  const fontSize = await getFontSize(page)
+  expect(fontSize).toEqual(29)
+})
+
+it('should calculate and set style.fontSize on resize', async () => {
+  const page = await browser.newPage()
+  page.setViewport({ width, height })
+  await page.goto(minimalExample)
+  await page.waitFor(200)
+  const fontSize = await getFontSize(page)
+  expect(fontSize).toEqual(29)
+  page.setViewport({ width: width / 2, height })
+  await page.waitFor(200)
+  const fontSizeResized = await getFontSize(page)
+  expect(fontSizeResized).toBeLessThan(15)
+  expect(fontSizeResized).toBeGreaterThanOrEqual(13)
 })
