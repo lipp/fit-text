@@ -25,6 +25,7 @@ RUN npm test && npm prune
 
 FROM busybox
 WORKDIR /usr/src
-RUN mkdir /public
-COPY ./ /public/
+RUN mkdir -p /public/examples && mkdir -p /public/dist
+COPY ./examples/* /public/examples/
+COPY ./dist/* /public/dist/
 
