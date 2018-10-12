@@ -11,6 +11,7 @@
     "width"
   ],
   "main": "dist/index.min.js",
+  "files": "dist/index.min.js",
   "scripts": {
     "test": "npm run build && jest && bundlesize",
     "build": "uglifyjs --compress --mangle --output ./dist/index.min.js -- ./src/index.js",

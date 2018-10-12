@@ -1,4 +1,5 @@
 {
+  "alias": ["fit-text.now.sh"],
   "type": "static",
   "features": {
     "cloud": "v1"
