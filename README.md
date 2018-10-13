@@ -1,8 +1,10 @@
 # fit-text
 
-A very basic and lightweight vanilla fit-text web component.
+A very basic and lightweight vanilla fit-text web component, which adjusts the font-size to fit the parent container width.
 
-Adjusts the font-size to fit the parent container width.
+[![Demo](./demo.gif)](https://fit-text.now.sh/examples/tiles.html)
+
+.
 
 ## Highlights
 
@@ -21,8 +23,6 @@ Thus, not every major Browser is supported yet.
 
 # Demo
 
-[![Demo on Codepen](./demo.gif)](https://codepen.io/lipp/pen/YJGvEe?editors=1100#0)
-
 Play with this demo on [codepen.io](https://codepen.io/lipp/pen/YJGvEe?editors=1100#0).
 
 # Usage
@@ -35,5 +35,6 @@ Play with this demo on [codepen.io](https://codepen.io/lipp/pen/YJGvEe?editors=1
 </div>
 ```
 
-Also checkout the [examples directory](./examples).
+Also checkout the [examples directory](./examples). They are deployed [here](https://fit-text.now.sh/examples/)
+
 
