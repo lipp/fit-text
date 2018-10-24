@@ -34,7 +34,10 @@ const getFontSize = page =>
 
 it('should calculate and set style.fontSize of #inner', async () => {
   const page = await browser.newPage()
-  page.setViewport({ width, height })
+  page.setViewport({
+    width,
+    height
+  })
   await page.goto(minimalExample)
   await page.waitFor(200)
   const fontSize = await getFontSize(page)
@@ -43,12 +46,18 @@ it('should calculate and set style.fontSize of #inner', async () => {
 
 it('should calculate and set style.fontSize on resize', async () => {
   const page = await browser.newPage()
-  page.setViewport({ width, height })
+  page.setViewport({
+    width,
+    height
+  })
   await page.goto(minimalExample)
   await page.waitFor(200)
   const fontSize = await getFontSize(page)
   expect(fontSize).toEqual(29)
-  page.setViewport({ width: width / 2, height })
+  page.setViewport({
+    width: width / 2,
+    height
+  })
   await page.waitFor(200)
   const fontSizeResized = await getFontSize(page)
   expect(fontSizeResized).toBeLessThan(15)
